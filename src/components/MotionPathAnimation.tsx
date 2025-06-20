@@ -12,14 +12,37 @@ const MotionPathAnimation = () => {
     gsap.to(".button", {
       duration: 2,
       ease: "none",
-      motionPath: { path: ".path", align: ".path", alignOrigin: [0.5, 0.5] },
+      motionPath: {
+        path: ".path",
+        align: ".path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+      },
     });
   });
 
   return (
-    <div ref={container}>
-      <button onClick={onClickGood} className="button">
-        Press Me
+    <div style={{ position: "relative" }} ref={container}>
+      <button
+        onClick={onClickGood}
+        className="button"
+        style={{
+          position: "absolute",
+          top: "64px",
+          left: "-52px",
+          rotate: "-45deg",
+          borderRadius: "8px 24px 24px 8px",
+          border: "1px solid transparent",
+          padding: "0.6em 1.2em",
+          fontSize: "1em",
+          fontWeight: 500,
+          fontFamily: "inherit",
+          backgroundColor: "#1a1a1a",
+          cursor: "pointer",
+          outline: "4px auto deeppink",
+        }}
+      >
+        Animate Me
       </button>
 
       <svg
@@ -29,7 +52,7 @@ const MotionPathAnimation = () => {
         height="173.407px"
       >
         <path
-          style={{ stroke: "black", fill: "none" }}
+          style={{ stroke: "deeppink", fill: "none" }}
           d="M 100.8616 300.7359 C 100.8616 300.7359 254.913 104.7034 400 300 C 545.087 495.2966 600 300 600 300"
           className="path"
         />
