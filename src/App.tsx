@@ -1,10 +1,9 @@
-import "./App.css";
-import Animation from "./Animation";
+import MotionPathAnimation from "./components/MotionPathAnimation";
 
 function App() {
   return (
     <>
-      <Animation />
+      <MotionPathAnimation />
     </>
   );
 }
